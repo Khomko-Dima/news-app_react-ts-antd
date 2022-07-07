@@ -6,8 +6,11 @@ import SearchComponent from './components/controls/search';
 import FilterComponent from './components/controls/filter';
 import MyProvider from './components/context/provider';
 
+import { NewsStore } from './context/news/provider';
+
 const App: React.FC = () => (
-  <MyProvider>
+  <NewsStore>
+    <MyProvider>
     <Header />
     <div className='container'>
       <div className='controls'>
@@ -17,6 +20,8 @@ const App: React.FC = () => (
       <NewsList />
     </div>
     </MyProvider>
+  </NewsStore>
+  
 );
 
 export default App;
